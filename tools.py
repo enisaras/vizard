@@ -25,6 +25,14 @@ tools = [
                         "type": "string",
                         "description": "title for the plot",
                     },
+                    "xlabel": {
+                        "type": "string",
+                        "description": "label for the x-axis",
+                    },
+                    "ylabel": {
+                        "type": "string",
+                        "description": "label for the y-axis",
+                    },
                 },        
                 "required": ["x", "y"],
             },
@@ -33,34 +41,42 @@ tools = [
 
     {
         "type": "function",
-            "function": {
-                "name": "line_plot",
-                "description": "Create a line plot of two lists.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "x": {
-                            "type": "array",
-                            "description": "x value for line plot",
-                            "items": {
-                                "type": "number",
-                            },
+        "function": {
+            "name": "line_plot",
+            "description": "Create a line plot of two lists.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "x": {
+                        "type": "array",
+                        "description": "x value for line plot",
+                        "items": {
+                            "type": "number",
                         },
-                        "y": {
-                            "type": "array", 
-                            "items": {
-                                "type": "number",
-                            },
-                            "description": "y value for line plot"
+                    },
+                    "y": {
+                        "type": "array", 
+                        "items": {
+                            "type": "number",
                         },
-                        "title": {
-                            "type": "string",
-                            "description": "title for the plot",
-                        },
-                    },        
-                    "required": ["x", "y"],
-                },
+                        "description": "y value for line plot"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "title for the plot",
+                    },
+                    "xlabel": {
+                        "type": "string",
+                        "description": "label for the x-axis",
+                    },
+                    "ylabel": {
+                        "type": "string",
+                        "description": "label for the y-axis",
+                    },
+                },        
+                "required": ["x", "y"],
             },
+        },
     },
     {
         "type": "function",
@@ -92,6 +108,14 @@ tools = [
                         "type": "string",
                         "description": "color of the bars",
                         "default": "blue"
+                    },
+                    "xlabel": {
+                        "type": "string",
+                        "description": "label for the x-axis",
+                    },
+                    "ylabel": {
+                        "type": "string",
+                        "description": "label for the y-axis",
                     },
                 },        
                 "required": ["x", "y"],
