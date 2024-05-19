@@ -36,8 +36,10 @@ def run_conversation(system_prompt, user_prompt):
         for tool_call in tool_calls:
             function_name = tool_call.function.name
             function_to_call = available_functions[function_name]
+            print(tool_call.function.arguments)
             function_args = json.loads(tool_call.function.arguments)
             function_response = function_to_call(
+                # df=function_args.get("df"),
                 x=function_args.get("x"),
                 y=function_args.get("y"),
                 title=function_args.get("title"),

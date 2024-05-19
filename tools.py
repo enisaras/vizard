@@ -3,23 +3,21 @@ tools = [
         "type": "function",
         "function": {
             "name": "scatter_plot",
-            "description": "Create a scatter plot of two lists.",
+            "description": "Create a scatter plot of two columns from a pandas dataframe.",
             "parameters": {
                 "type": "object",
                 "properties": {
+                    "df": {
+                        "type": "object",
+                        "description": "pandas dataframe containing the data, this is required to plot.",
+                    },
                     "x": {
-                        "type": "array",
-                        "description": "x value for scatter plot",
-                        "items": {
-                            "type": "number",
-                        },
+                        "type": "string",
+                        "description": "column name for x value in the dataframe",
                     },
                     "y": {
-                        "type": "array", 
-                        "items": {
-                            "type": "number",
-                        },
-                        "description": "y value for scatter plot"
+                        "type": "string", 
+                        "description": "column name for y value in the dataframe"
                     },
                     "title": {
                         "type": "string",
@@ -34,7 +32,7 @@ tools = [
                         "description": "label for the y-axis",
                     },
                 },        
-                "required": ["x", "y"],
+                "required": ["df", "x", "y"],
             },
         },
     },
@@ -43,23 +41,21 @@ tools = [
         "type": "function",
         "function": {
             "name": "line_plot",
-            "description": "Create a line plot of two lists.",
+            "description": "Create a line plot of two columns from a pandas dataframe",
             "parameters": {
                 "type": "object",
                 "properties": {
+                    "df": {
+                        "type": "object",
+                        "description": "pandas dataframe containing the data, this is required to plot.",
+                    },
                     "x": {
-                        "type": "array",
-                        "description": "x value for line plot",
-                        "items": {
-                            "type": "number",
-                        },
+                        "type": "string",
+                        "description": "column name for x value in the dataframe",
                     },
                     "y": {
-                        "type": "array", 
-                        "items": {
-                            "type": "number",
-                        },
-                        "description": "y value for line plot"
+                        "type": "string",
+                        "description": "column name for y value in the dataframe",
                     },
                     "title": {
                         "type": "string",
@@ -74,7 +70,7 @@ tools = [
                         "description": "label for the y-axis",
                     },
                 },        
-                "required": ["x", "y"],
+                "required": ["df", "x", "y"],
             },
         },
     },
@@ -82,23 +78,21 @@ tools = [
         "type": "function",
         "function": {
             "name": "bar_plot",
-            "description": "Create a bar plot of two lists.",
+            "description": "Create a bar plot of two columns from a pandas dataframe.",
             "parameters": {
                 "type": "object",
                 "properties": {
+                    "df": {
+                        "type": "object",
+                        "description": "pandas dataframe containing the data, this is required to plot.",
+                    },
                     "x": {
-                        "type": "array",
-                        "description": "x value for bar plot",
-                        "items": {
-                            "type": "number",
-                        },
+                        "type": "string",
+                        "description": "column name for x value in the dataframe",
                     },
                     "y": {
-                        "type": "array", 
-                        "items": {
-                            "type": "number",
-                        },
-                        "description": "y value for bar plot"
+                        "type": "string", 
+                        "description": "column name for y value in the dataframe"
                     },
                     "title": {
                         "type": "string",
@@ -118,7 +112,7 @@ tools = [
                         "description": "label for the y-axis",
                     },
                 },        
-                "required": ["x", "y"],
+                "required": ["df", "x", "y"],
             },
         },
     }

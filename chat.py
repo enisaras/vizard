@@ -6,8 +6,8 @@ st.title("💬 Vizard")
 st.caption("Data Visualization Assistant")
 uploaded_file = st.file_uploader("Choose a file", type='csv')
 if uploaded_file is not None:
-    dataframe = pd.read_csv(uploaded_file)
-    st.dataframe(dataframe)
+    df = pd.read_csv(uploaded_file)
+    st.dataframe(df)
 
 
 if "messages" not in st.session_state:
@@ -22,7 +22,7 @@ for i, msg in enumerate(st.session_state.messages):
 
 
 if prompt := st.chat_input():
-    system_prompt = llm_utils.create_system_prompt(dataframe)
+    system_prompt = llm_utils.create_system_prompt(df)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     res, chart = run_conversation(system_prompt, prompt)
